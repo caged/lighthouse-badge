@@ -38,8 +38,8 @@ if(typeof jQuery != 'undefined') {
         $.each(data.tickets, function(index, obj) {
           var link = $('<li><a href="' + self.baseURL + 'projects/' + project + 
                        '/tickets/' + obj.ticket.number + '-' + obj.ticket.permalink + 
-                       '">' + obj.ticket.title + '</a></li>');
-          link.appendTo(ticketList)
+                       '">#' + obj.ticket.number + ' ' + obj.ticket.title + '</a></li>');
+          link.appendTo(ticketList);
         });
         ticketList.appendTo(container);
       });
