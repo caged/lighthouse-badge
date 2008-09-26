@@ -17,7 +17,7 @@ if(typeof jQuery != 'undefined') {
       
       this.account = params.attr('account');
       this.query   = params.attr('query');
-      this.token   = params.attr('token');
+      this.token   = params.text();
       this.baseURL = 'http://' + this.account + '.lighthouseapp.com/';
       
       var self = this;
