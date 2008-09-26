@@ -38,7 +38,8 @@ if(typeof jQuery != 'undefined') {
         $.each(data.tickets, function(index, obj) {
           var link = $('<li><a href="' + self.baseURL + 'projects/' + project + 
                        '/tickets/' + obj.ticket.number + '-' + obj.ticket.permalink + 
-                       '">#' + obj.ticket.number + ' ' + obj.ticket.title + '</a></li>');
+                       '"><strong>#' + obj.ticket.number + '</strong> ' + 
+                       obj.ticket.title + '</a></li>');
           link.appendTo(ticketList);
         });
         ticketList.appendTo(container);
