@@ -46,8 +46,10 @@ if(typeof jQuery != 'undefined') {
     },
     
     resourceURL: function(resource, obj) {
-      return this.baseURL + resource + '/' + obj + '.json?_token=' + 
+      var url = this.baseURL + resource + '/' + obj + '.json?_token=' + 
       this.token + '&callback=?';
+      console.log(url);
+      return url;
     },
        
     ticketsURL: function(project) {
