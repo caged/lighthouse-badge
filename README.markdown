@@ -1,5 +1,12 @@
 ## Add Lighthouse Tickets To Your GitHub Wiki
-Basically add the code below to the wiki page you want to show Lighthouse tickets on.
+
+### Create a READONLY API token in Lighthouse
+[Log into your profile on Lighthouse](https://sera.lighthouseapp.com/login).  In the sidebar, 
+choose the account and project you're wanting to show.  It's important that this is a *READ ONLY* 
+key and the project is OSS or public because anyone can see your key.
+
+### Add the code to your GitHub wiki
+Add the code below to the wiki page you want to show Lighthouse tickets on.
 Because GitHub sanitizes inline scripts, you'll need to specify your account, token and a 
 custom query if you'd like on a span element with the id lighthouse-parameters.
 
