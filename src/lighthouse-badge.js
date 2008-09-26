@@ -1,4 +1,7 @@
-if((typeof Lighthouse != 'undefined') && (typeof jQuery != 'undefined')) {
+// This is basically a GitHub specific version for now.
+//
+if(typeof jQuery != 'undefined') {
+  var Lighthouse = {};
   Lighthouse.Badge = function() {
     return this.initialize.apply(this, arguments);
   };
@@ -6,9 +9,19 @@ if((typeof Lighthouse != 'undefined') && (typeof jQuery != 'undefined')) {
   Lighthouse.Badge.VERSION = "0.2.0";
   Lighthouse.Badge.prototype = {
     initialize: function() {
-      this.baseURL = 'http://' + Lighthouse.account + '.lighthouseapp.com/';
+      var params = $('#lighthouse-parameters');
+      if(!params) {
+        alert("You need to define a span element with the id of lighthouse-parameters and define the required params");
+        return;
+      }
+      
+      this.account = params.attr('account');
+      this.query   = params.attr('query');
+      this.token   = params.attr('token');
+      this.baseURL = 'http://' + this.account + '.lighthouseapp.com/';
+      
       var self = this;
-      $.getJSON(this.resourceURL('tokens', Lighthouse.token),
+      $.getJSON(this.resourceURL('tokens', this.token),
         function(data) {
           if(!data.token.read_only) {
             alert("This token has write access.  You should use a read only token.");
@@ -34,13 +47,13 @@ if((typeof Lighthouse != 'undefined') && (typeof jQuery != 'undefined')) {
     
     resourceURL: function(resource, obj) {
       return this.baseURL + resource + '/' + obj + '.json?_token=' + 
-      Lighthouse.token + '&callback=?';
+      this.token + '&callback=?';
     },
        
     ticketsURL: function(project) {
       return this.baseURL + 'projects/' +  
-             project + '/tickets.json?q=' + Lighthouse.query + 
-            '&_token=' + Lighthouse.token + '&callback=?';
+             project + '/tickets.json?q=' + this.query + 
+            '&_token=' + this.token + '&callback=?';
     },
     
     scriptTag: function() {
@@ -55,5 +68,5 @@ if((typeof Lighthouse != 'undefined') && (typeof jQuery != 'undefined')) {
   // Initialize everything
   $(function() { new Lighthouse.Badge(); });
 } else {
-  alert("You need to define Lighthouse.token, Lighthouse.account and Lighthouse.query and have jQuery present");
+  alert("You need to have jQuery present");
 }
