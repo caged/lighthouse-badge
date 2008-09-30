@@ -10,10 +10,9 @@ Add the code below to the wiki page you want to show Lighthouse tickets on.
 Because GitHub sanitizes inline scripts, you'll need to specify your account, token and a 
 custom query if you'd like on a span element with the id lighthouse-parameters.
 
-    <pre>
-    <code>
-    &lt;notextile&gt;
-    &lt;style type=&quot;text/css&quot;&gt;
+
+    <notextile>
+    <style type="text/css">
     ul.lh-tickets {
       list-style:none;
     }
@@ -38,12 +37,9 @@ custom query if you'd like on a span element with the id lighthouse-parameters.
       width:42px;
       float:left;
     }
-    &lt;/style&gt;
-    &lt;/notextile&gt;
-    </code>
-    </pre>
+    </style>
+    </notextile>
+
     
-    <pre><code>
-    &lt;span style=&quot;display:none&quot; id=&quot;lighthouse-parameters&quot;  account=&quot;activereload&quot; query=&quot;state:open&quot;&gt;13680c7b2c869868cfd87963df8e8252202d9a0d&lt;/span&gt;
-    &lt;script src=&quot;http://github.com/Caged/lighthouse-badge/tree/master%2Fsrc%2Flighthouse-badge.js?raw=true&quot;&gt;&lt;/script&gt;
-    </code></pre>
+    <span style="display:none" id="lighthouse-parameters"  account="activereload" query="state:open">13680c7b2c869868cfd87963df8e8252202d9a0d</span>
+    <script src="http://github.com/Caged/lighthouse-badge/tree/master%2Fsrc%2Flighthouse-badge.js?raw=true"></script>
