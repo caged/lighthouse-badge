@@ -8,7 +8,7 @@ key and the project is OSS or public because anyone can see your key.
 ### Add the code to your GitHub wiki
 Add the code below to the wiki page you want to show Lighthouse tickets on.
 Because GitHub sanitizes inline scripts, you'll need to specify your account, token and a 
-custom query if you'd like on a span element with the id lighthouse-parameters.
+custom query if you'd like on a span element with the id **lighthouse-parameters**.
 
 
     <notextile>
