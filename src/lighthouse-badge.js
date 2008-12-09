@@ -49,7 +49,6 @@ if(typeof jQuery != 'undefined') {
     resourceURL: function(resource, obj) {
       var url = this.baseURL + resource + '/' + obj + '.json?_token=' + 
       this.token + '&callback=?';
-      console.log(url);
       return url;
     },
        
