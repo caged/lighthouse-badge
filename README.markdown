@@ -1,5 +1,7 @@
 ## Add Lighthouse Tickets To Your GitHub Wiki
 
+***NOTE: This will not work on private GitHub project wikis***
+
 ### Create a READONLY API token in Lighthouse
 [Log into your profile on Lighthouse](https://sera.lighthouseapp.com/login).  In the sidebar, 
 choose the account and project you're wanting to show.  It's important that this is a *READ ONLY* 
